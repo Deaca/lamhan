@@ -5,6 +5,7 @@ import { SectionHeader } from "@/components/section-header"
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
 import { Flame } from "lucide-react" // Import Flame icon
+import Image from "next/image"
 
 const featuredItems = [
   {
@@ -39,11 +40,12 @@ export default function FeaturedItems() {
             <FadeInSection key={index} delay={0.1 * index}>
               <Card className="flex overflow-hidden h-[200px] bg-custom-white">
                 <div className="w-1/3 relative">
-                  <img
+                 <Image
                     src={item.image || "/placeholder.svg"}
                     alt={item.name}
-                    className="absolute inset-0 w-full h-full object-cover"
-                  />
+                    fill
+                    className="object-cover"
+                 />
                 </div>
                 <div className="w-2/3 p-6 flex flex-col justify-between">
                   <div>
